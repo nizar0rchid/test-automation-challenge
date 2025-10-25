@@ -1,7 +1,7 @@
 
 # 🧪 Test Automation Coding Challenge – CoinRanking API
 
-![Test Status](https://github.com/nizar0rchid/test-automation-challenge/actions/workflows/test.yml/badge.svg)
+![Test Status](https://github.com/nizar0rchid/test-automation-challenge/actions/workflows/tests.yaml/badge.svg)
 
 
 ---
