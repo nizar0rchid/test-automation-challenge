@@ -1,5 +1,10 @@
-# Test Automation Coding Challenge
 
+# 🧪 Test Automation Coding Challenge – CoinRanking API
+
+![Test Status](https://github.com/nizar0rchid/test-automation-challenge/actions/workflows/test.yml/badge.svg)
+
+
+---
 This project demonstrates **REST API test automation** using **Node.js**, following **Clean Architecture principles**.  
 It tests the **CoinRanking API**, which provides cryptocurrency data, and focuses on writing **clean, maintainable, and scalable code** for automated API tests.
 
@@ -16,6 +21,19 @@ This project covers:
 
 ---
 
+## ⚡ GitHub Actions Workflow
+
+This project includes a CI/CD pipeline to run tests **manually** or **on push** using **GitHub Actions**.
+
+## 🔑 Setup GitHub Secret
+
+Before running the workflow:
+
+1.  Go to your repository → **Settings → Secrets and variables → Actions → New repository secret**
+2.  Add:
+    -   **Name:** COINRANKING_API_KEY
+    -   **Value:** your valid API key
+
 ## Architecture
 
 The project uses **Clean Architecture**:
@@ -28,7 +46,8 @@ The project uses **Clean Architecture**:
 **Benefits:** High modularity, testability, maintainability, and scalability.
 
 ---
-## Project Structure
+## 📁 Project Structure
+
 
     test-automation-challenge/  
     │  
@@ -93,15 +112,6 @@ npm test
 - **Mocha** – Test runner  
 - **Chai** – Assertions  
 - **Dotenv** – Environment variable management  
-
----
-
-## Advantages of Clean Architecture
-
-- **Separation of Concerns:** Domain, Use Cases, Adapters, and Tests are decoupled  
-- **Scalable:** Easy to add new endpoints or services  
-- **Testable:** HTTP calls abstracted; can mock `HttpClient` for unit tests  
-- **Reusable:** Services can be used across multiple test suites or scripts  
 
 ---
 

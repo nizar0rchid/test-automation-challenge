@@ -1,0 +1,41 @@
+name: Run API Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Run Node.js Tests
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set environment variables
+        env:
+          COINRANKING_API_KEY: ${{ secrets.COINRANKING_API_KEY }}
+          BASE_URL: https://api.coinranking.com/v2
+        run: |
+          echo "Environment variables configured."
+
+      - name: Run tests
+        env:
+          COINRANKING_API_KEY: ${{ secrets.COINRANKING_API_KEY }}
+          BASE_URL: https://api.coinranking.com/v2
+        run: npm test
